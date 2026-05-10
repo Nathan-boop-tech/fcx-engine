@@ -1,8 +1,8 @@
-FCX Engine Lite
+# FCX Engine Lite
 
-A lightweight 2D game engine built with TypeScript and Canvas 2D API. Featuring a scene-based architecture with input handling, camera system, and collision detection.
+A lightweight 2D game engine built with **TypeScript** and Canvas 2D API. Featuring a scene-based architecture with input handling, camera system, and collision detection.
 
-Current Features
+# Current Features
 
 TypeScript-based game engine - Fully typed codebase for better developer experience
 Scene management system - Boot, Menu, and Game scenes with easy transitions
