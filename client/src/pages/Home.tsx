@@ -1,20 +1,22 @@
 /**
- * Home Page - FCX Engine Lite v1.0
- * Professional Game Engine Editor
+ * Home Page - FCX Engine Pro
+ * Complete game engine with editor and playable games
  * 
  * App Flow:
- * 1. Splash Screen - Boot animation (3-5 seconds)
- * 2. Launcher UI - Project management with grid
- * 3. Engine Editor - Full workspace with all panels
+ * 1. Splash Screen - Boot animation
+ * 2. Launcher - Project management
+ * 3. Editor - 3D game editor
+ * 4. Play Mode - Fully playable games
  */
 
 import { useState } from 'react';
 import { FCXProject } from '@/lib/project-manager';
 import SplashScreenBoot from '@/components/SplashScreenBoot';
 import EngineLauncherRedesigned from '@/components/EngineLauncherRedesigned';
-import EngineEditor from '@/components/EngineEditor';
+import GameEditorWorkspace from '@/components/GameEditorWorkspace';
+import FlightSimulatorGame from '@/components/FlightSimulatorGame';
 
-type AppState = 'splash' | 'launcher' | 'editor';
+type AppState = 'splash' | 'launcher' | 'editor' | 'play_flight_sim';
 
 export default function Home() {
   const [appState, setAppState] = useState<AppState>('splash');
@@ -34,6 +36,16 @@ export default function Home() {
     setSelectedProject(null);
   };
 
+  const handlePlayGame = (gameType: string) => {
+    if (gameType === 'flight_sim') {
+      setAppState('play_flight_sim');
+    }
+  };
+
+  const handleCloseGame = () => {
+    setAppState('editor');
+  };
+
   return (
     <>
       {appState === 'splash' && (
@@ -43,7 +55,14 @@ export default function Home() {
         <EngineLauncherRedesigned onProjectSelected={handleProjectSelected} />
       )}
       {appState === 'editor' && selectedProject && (
-        <EngineEditor project={selectedProject} onClose={handleCloseEditor} />
+        <GameEditorWorkspace 
+          project={selectedProject} 
+          onClose={handleCloseEditor}
+          onPlayGame={handlePlayGame}
+        />
+      )}
+      {appState === 'play_flight_sim' && (
+        <FlightSimulatorGame onClose={handleCloseGame} />
       )}
     </>
   );
