@@ -3,20 +3,26 @@
  * Professional Game Engine Editor
  * 
  * App Flow:
- * 1. Launcher UI - Project management
- * 2. Engine Editor - Full workspace with all panels
+ * 1. Splash Screen - Boot animation (3-5 seconds)
+ * 2. Launcher UI - Project management with grid
+ * 3. Engine Editor - Full workspace with all panels
  */
 
 import { useState } from 'react';
 import { FCXProject } from '@/lib/project-manager';
-import EngineLauncher from '@/components/EngineLauncher';
+import SplashScreenBoot from '@/components/SplashScreenBoot';
+import EngineLauncherRedesigned from '@/components/EngineLauncherRedesigned';
 import EngineEditor from '@/components/EngineEditor';
 
-type AppState = 'launcher' | 'editor';
+type AppState = 'splash' | 'launcher' | 'editor';
 
 export default function Home() {
-  const [appState, setAppState] = useState<AppState>('launcher');
+  const [appState, setAppState] = useState<AppState>('splash');
   const [selectedProject, setSelectedProject] = useState<FCXProject | null>(null);
+
+  const handleSplashComplete = () => {
+    setAppState('launcher');
+  };
 
   const handleProjectSelected = (project: FCXProject) => {
     setSelectedProject(project);
@@ -30,8 +36,11 @@ export default function Home() {
 
   return (
     <>
+      {appState === 'splash' && (
+        <SplashScreenBoot onComplete={handleSplashComplete} />
+      )}
       {appState === 'launcher' && (
-        <EngineLauncher onProjectSelected={handleProjectSelected} />
+        <EngineLauncherRedesigned onProjectSelected={handleProjectSelected} />
       )}
       {appState === 'editor' && selectedProject && (
         <EngineEditor project={selectedProject} onClose={handleCloseEditor} />
