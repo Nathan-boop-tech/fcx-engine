@@ -1,6 +1,6 @@
 /**
- * FCX Engine Pro - Game Editor Workspace
- * Full development environment with 3D viewport, inspector, and play mode
+ * Flight Control X - Game Editor Workspace
+ * Professional 3D game editor with AI coding partner, physics, and rendering
  */
 
 import { useState } from 'react';
@@ -27,8 +27,8 @@ export default function GameEditorWorkspace({
       {/* Top Toolbar */}
       <div className="bg-card/50 backdrop-blur border-b border-border px-6 py-4 flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-mono text-primary hud-readout">{project.name}</h1>
-          <p className="text-xs text-muted-foreground font-mono">FCX Engine Pro Editor</p>
+          <h1 className="text-xl font-mono text-primary hud-readout">Flight Control X</h1>
+          <p className="text-xs text-muted-foreground font-mono">{project.name} • Editor</p>
         </div>
 
         <div className="flex items-center gap-3">
@@ -207,7 +207,7 @@ export default function GameEditorWorkspace({
 
       {/* Status Bar */}
       <div className="bg-card/50 backdrop-blur border-t border-border px-6 py-2 font-mono text-xs text-muted-foreground flex justify-between">
-        <div>FCX Engine Pro • {project.name}</div>
+        <div>Flight Control X • {project.name}</div>
         <div>3 Objects • 60 FPS • Ready</div>
       </div>
     </div>

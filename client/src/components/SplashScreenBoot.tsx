@@ -1,6 +1,6 @@
 /**
- * FCX Engine Lite Splash Screen
- * Boot animation with grid particles and logo fade-in
+ * Flight Control X - Splash Screen
+ * Professional boot animation with grid particles and logo fade-in
  */
 
 import { useEffect, useState } from 'react';

@@ -1,6 +1,6 @@
 /**
- * FCX Engine Launcher (Redesigned)
- * Project grid with sidebar navigation
+ * Flight Control X - Project Launcher
+ * Professional project management with grid view and game creation
  */
 
 import { useState } from 'react';

@@ -1,12 +1,20 @@
 /**
- * Home Page - FCX Engine Pro
- * Complete game engine with editor and playable games
+ * Flight Control X - Professional Game Engine
+ * Complete 3D game engine with AI coding partner, physics, and playable games
  * 
  * App Flow:
  * 1. Splash Screen - Boot animation
- * 2. Launcher - Project management
- * 3. Editor - 3D game editor
- * 4. Play Mode - Fully playable games
+ * 2. Launcher - Project management and game creation
+ * 3. Editor - 3D game editor with AI coding partner
+ * 4. Play Mode - Fully playable games with real physics
+ * 
+ * Features:
+ * - AI 3D Model Generator
+ * - AI Coding Partner
+ * - Real-time Physics Engine
+ * - Advanced 3D Rendering
+ * - Game Creation Wizard
+ * - Multiple Game Templates
  */
 
 import { useState } from 'react';
